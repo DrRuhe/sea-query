@@ -78,7 +78,7 @@ impl SchemaStatementBuilder for IndexDropStatement {
 
 impl From<super::create::IndexCreateStatement> for IndexDropStatement {
     fn from(
-        IndexCreateStatement { table, index, .. }: super::create::IndexCreateStatement,
+        super::create::IndexCreateStatement { table, index, .. }: super::create::IndexCreateStatement,
     ) -> Self {
         Self { table, index }
     }

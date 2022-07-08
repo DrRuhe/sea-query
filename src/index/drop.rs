@@ -75,3 +75,11 @@ impl SchemaStatementBuilder for IndexDropStatement {
         sql.result()
     }
 }
+
+impl From<super::create::IndexCreateStatement> for IndexDropStatement {
+    fn from(
+        IndexCreateStatement { table, index, .. }: super::create::IndexCreateStatement,
+    ) -> Self {
+        Self { table, index }
+    }
+}
